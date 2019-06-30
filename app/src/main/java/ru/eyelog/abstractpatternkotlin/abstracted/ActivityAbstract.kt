@@ -1,4 +1,4 @@
-package ru.eyelog.abstractpatternkotlin.classic
+package ru.eyelog.abstractpatternkotlin.abstracted
 
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
@@ -7,9 +7,12 @@ import android.widget.AdapterView
 import kotlinx.android.synthetic.main.sand_box.*
 import ru.eyelog.abstractpatternkotlin.R
 
-class ClassicActivity: AppCompatActivity() {
+class ActivityAbstract : AppCompatActivity(){
 
-    var roundClass = RoundClass()
+    // Более легкие и стройные классы
+    val roundDown = RoundDown()
+    val roundFlex = RoundFlex()
+    val roundUp = RoundUp()
 
     private var position: Int = 0
     private var outLine: String? = null
@@ -33,13 +36,16 @@ class ClassicActivity: AppCompatActivity() {
             if (etIn.getText().toString() != "" && Integer.parseInt(etIn.getText().toString()) > 9) {
                 when (position) {
                     0 -> {
-                        outLine = roundClass.roundDexDown(etIn.getText().toString()).toString()
+                        roundDown.setValues(etIn.text.toString())
+                        outLine = roundDown.roundIt()
                     }
                     1 -> {
-                        outLine = roundClass.roundDexFlex(etIn.getText().toString()).toString()
+                        roundFlex.setValues(etIn.text.toString())
+                        outLine = roundFlex.roundIt()
                     }
                     2 -> {
-                        outLine = roundClass.roundDexUp(etIn.getText().toString()).toString()
+                        roundUp.setValues(etIn.text.toString())
+                        outLine = roundUp.roundIt()
                     }
                     else -> outLine = "Чёт не так =("
                 }

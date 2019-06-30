@@ -17,6 +17,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".classic.ClassicActivity"/>
+        <activity android:name=".abstracted.ActivityAbstract"/>
+        <activity android:name=".interfaced.ActivityInterface"/>
     </application>
 
 </manifest>
