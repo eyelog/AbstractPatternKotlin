@@ -10,7 +10,9 @@ import ru.eyelog.abstractpatternkotlin.R
 class ActivityInterface : AppCompatActivity(){
 
     // Лёгкие и стройные интерфейсы.
-    val roundClass = RoundClass()
+    val ccRoundUp: RCRoundUpImpl = RoundClass()
+    val ccRoundFlex: RCRoundFlexImpl = RoundClass()
+    val ccRoundDown: RCRoundDownImpl = RoundClass()
 
     private var position: Int = 0
     private var outLine: String? = null
@@ -34,13 +36,13 @@ class ActivityInterface : AppCompatActivity(){
             if (etIn.getText().toString() != "" && Integer.parseInt(etIn.getText().toString()) > 9) {
                 when (position) {
                     0 -> {
-                        outLine = roundClass.roundDexDown(etIn.text.toString()).toString()
+                        outLine = ccRoundDown.roundDexDown(etIn.text.toString()).toString()
                     }
                     1 -> {
-                        outLine = roundClass.roundDexFlex(etIn.text.toString()).toString()
+                        outLine = ccRoundFlex.roundDexFlex(etIn.text.toString()).toString()
                     }
                     2 -> {
-                        outLine = roundClass.roundDexUp(etIn.text.toString()).toString()
+                        outLine = ccRoundUp.roundDexUp(etIn.text.toString()).toString()
                     }
                     else -> outLine = "Чёт не так =("
                 }

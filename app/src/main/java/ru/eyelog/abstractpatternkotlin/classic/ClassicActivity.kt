@@ -9,6 +9,7 @@ import ru.eyelog.abstractpatternkotlin.R
 
 class ClassicActivity: AppCompatActivity() {
 
+    // Тяжелый класс
     var roundClass = RoundClass()
 
     private var position: Int = 0

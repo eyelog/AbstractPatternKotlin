@@ -9,7 +9,7 @@ import ru.eyelog.abstractpatternkotlin.R
 
 class ActivityAbstract : AppCompatActivity(){
 
-    // Более легкие и стройные классы
+    // Более легкие и стройные абстрактные классы
     val roundDown = RoundDown()
     val roundFlex = RoundFlex()
     val roundUp = RoundUp()

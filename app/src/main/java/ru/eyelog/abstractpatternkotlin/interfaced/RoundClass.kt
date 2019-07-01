@@ -2,15 +2,15 @@ package ru.eyelog.abstractpatternkotlin.interfaced
 
 class RoundClass: RCRoundDownImpl, RCRoundFlexImpl, RCRoundUpImpl {
 
-    override fun roundDexDown(num: String): Int {
+    override fun roundDexUp(num: String): Int {
         return Integer.parseInt(num.substring(0, num.length - 1)) * 10 + 10
     }
 
-    override fun roundDexFlex(num: String): Int {
+    override fun roundDexDown(num: String): Int {
         return Integer.parseInt(num.substring(0, num.length - 1)) * 10
     }
 
-    override fun roundDexUp(num: String): Int {
+    override fun roundDexFlex(num: String): Int {
         val FLEX_VALUE = 5
 
         val tempTail = Integer.parseInt(num.substring(num.length - 1))
